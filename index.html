@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lic. Silvina Chimento | Psicóloga Clínica - TCC, ACT y Psicología Positiva</title>
+    
+    <!-- Fuentes Google con Personalidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-cálido: #FAF7F2;          /* Arena de playa muy suave */
+            --arena-playa: #F4E8D7;        /* Tono arena tibia pastel */
+            --arena-dorada: #E6CFB3;       /* Arena dorada suave */
+            --lila-principal: #D8C5E8;     /* Lila pastel contenedor */
+            --lila-oscuro: #8B6B9E;        /* Lila profundo para acentos */
+            --texto-principal: #2B2633;    /* Violeta/Gris muy oscuro para máxima legibilidad */
+            --blanco: #FFFFFF;
+            --sombra-elegante: 0 10px 30px rgba(139, 107, 158, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cálido);
+            color: var(--texto-principal);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--texto-principal);
+            font-weight: 600;
+        }
+
+        /* Banner Portada Superior */
+        .top-banner {
+            background: linear-gradient(180deg, #F3EAF8 0%, var(--bg-cálido) 100%);
+            padding: 30px 20px 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--arena-playa);
+        }
+
+        .logo-header {
+            max-width: 180px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: var(--sombra-elegante);
+            transition: transform 0.3s ease;
+        }
+
+        .logo-header:hover {
+            transform: scale(1.03);
+        }
+
+        .header-titles h1 {
+            font-size: 2.3rem;
+            margin-top: 10px;
+            color: var(--texto-principal);
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            font-family: 'Alex Brush', cursive;
+            font-size: 2rem;
+            color: var(--lila-oscuro);
+            margin-top: -5px;
+        }
+
+        .badge-matriculas {
+            display: inline-flex;
+            gap: 15px;
+            background-color: var(--blanco);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--lila-oscuro);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-top: 15px;
+            border: 1px solid var(--lila-principal);
+        }
+
+        /* Navegación y Menú Hamburguesa */
+        nav {
+            background-color: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 20px;
+            position: relative;
+        }
+
+        .mobile-brand {
+            display: none;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--lila-oscuro);
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--lila-oscuro);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--texto-principal);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Responsive Mobile Navigation */
+        @media (max-width: 768px) {
+            .nav-container {
+                justify-content: space-between;
+            }
+
+            .mobile-brand {
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--blanco);
+                padding: 20px 0;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+                gap: 15px;
+                text-align: center;
+                border-top: 1px solid var(--arena-playa);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .header-titles h1 {
+                font-size: 1.7rem;
+            }
+            
+            .badge-matriculas {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+        /* Secciones Estilizadas */
+        .section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: var(--lila-principal);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-style: italic;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        /* Sección Sobre Mí con Foto Incorporada */
+        .sobre-mi-card {
+            background-color: var(--blanco);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--sombra-elegante);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 35px;
+            align-items: center;
+            border: 1px solid rgba(216, 197, 232, 0.4);
+        }
+
+        .sobre-mi-img-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 850px) {
+            .sobre-mi-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .sobre-mi-img-container {
+                max-width: 280px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Tarjetas Informativas */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card-custom {
+            background-color: var(--blanco);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid rgba(216, 197, 232, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-custom h3 {
+            font-size: 1.35rem;
+            color: var(--lila-oscuro);
+            margin-bottom: 12px;
+        }
+
+        /* Historias de Resiliencia */
+        .story-box {
+            background-color: var(--blanco);
+            border-left: 5px solid var(--lila-oscuro);
+            padding: 25px 30px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 25px;
+            box-shadow: var(--sombra-elegante);
+        }
+
+        .story-box h4 {
+            font-size: 1.25rem;
+            color: var(--texto-principal);
+            margin-bottom: 10px;
+        }
+
+        /* Carruseles Estilizados */
+        .carousel-wrapper {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            background-color: #111;
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .carousel-slides img {
+            width: 100%;
+            max-height: 520px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.85);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--texto-principal);
+            z-index: 10;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-control:hover {
+            background-color: var(--blanco);
+        }
+
+        .prev { left: 15px; }
+        .next { right: 15px; }
+
+        /* Formulario WhatsApp */
+        .whatsapp-form-container {
+            background: linear-gradient(135deg, var(--blanco) 0%, var(--arena-playa) 100%);
+            border-radius: 20px;
+            padding: 35px;
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: var(--sombra-elegante);
+            border: 1px solid var(--lila-principal);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .form-group select, .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #DDD;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .btn-whatsapp-send {
+            background-color: #25D366;
+            color: var(--blanco);
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-whatsapp-send:hover {
+            background-color: #1EBE57;
+            transform: scale(1.01);
+        }
+
+        /* BANNER INFERIOR Y FOOTER MEJORADO */
+        .footer-banner {
+            background: linear-gradient(180deg, var(--arena-playa) 0%, #E8D8EE 100%);
+            padding: 60px 20px 30px;
+            border-top: 2px solid var(--lila-principal);
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .footer-logo-box {
+            text-align: center;
+        }
+
+        .footer-logo-box img {
+            max-width: 140px;
+            border-radius: 50%;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .footer-info-block h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--texto-principal);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--lila-principal);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .footer-info-block p {
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            color: var(--texto-principal);
+        }
+
+        @media (max-width: 850px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-info-block h4 {
+                display: block;
+            }
+        }
+
+        /* Icono Flotante de WhatsApp */
+        .whatsapp-float-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 65px;
+            height: 65px;
+            z-index: 10000;
+            cursor: pointer;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.18));
+            transition: transform 0.3s ease;
+            animation: pulse-glow 2s infinite;
+        }
+
+        .whatsapp-float-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .whatsapp-float-btn:hover {
+            transform: scale(1.12);
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.06); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PORTADA Y BANNER SUPERIOR CON LOGO (Logo.png) -->
+    <header class="top-banner">
+        <img src="Logo.png" alt="Lic. Silvina Chimento - Isotipo Logo" class="logo-header">
+        <div class="header-titles">
+            <h1>Licenciada Silvina Chimento</h1>
+            <div class="header-subtitle">Acompañar • Escuchar • Transformar</div>
+
+        </div>
+        <div class="badge-matriculas">
+            <span>Matrícula Nacional: 81441</span>
+            <span>•</span>
+            <span>Matrícula Provincial: 086959</span>
+        </div>
+    </header>
+
+    <!-- MENÚ DE NAVEGACIÓN CON BOTÓN SANDWICH -->
+    <nav>
+        <div class="nav-container">
+            <span class="mobile-brand">Lic. Silvina Chimento</span>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir Menú">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre-mi" onclick="toggleMenu()">Sobre Mí</a></li>
+                <li><a href="#enfoque" onclick="toggleMenu()">Enfoque Terapéutico</a></li>
+                <li><a href="#servicios" onclick="toggleMenu()">Servicios</a></li>
+
+                <li><a href="#talleres" onclick="toggleMenu()">Talleres & Congresos</a></li>
+                <li><a href="#contacto" onclick="toggleMenu()">Contacto WhatsApp</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN SOBRE MÍ Y TRAYECTORIA CON FOTO INCORPORADA -->
+    <section id="sobre-mi" class="section">
+        <div class="section-header">
+            <h2>Sobre Mí & Trayectoria</h2>
+            <p>Acompañamiento psicológico clínico con calidez humana y respaldo profesional</p>
+        </div>
+        
+        <div class="sobre-mi-card">
+            <div class="sobre-mi-img-container">
+                <img src="Foto%20profesional%201.png" alt="Lic. Silvina Chimento - Psicóloga Clínica">
+            </div>
+            <div>
+                <p style="font-size: 1.05rem; margin-bottom: 18px;">
+                    Soy la <strong>Licenciada en Psicología Silvina Chimento</strong>, profesional matriculada con años de trayectoria dedicada a la salud mental y al bienestar emocional de adultos, parejas y adolescentes.
+                </p>
+                <p style="font-size: 1.05rem; margin-bottom: 18px;">
+                    Mi práctica clínica integra de manera rigurosa la <strong>Terapia Cognitivo-Conductual (TCC)</strong>, la <strong>Terapia de Aceptación y Compromiso (ACT)</strong> y los principios de la <strong>Psicología Positiva y Logoterapia de Víktor Frankl</strong>. Mi objetivo es construir un espacio seguro de contención donde podamos destrabar aspectos estancados de tu vida, promover el autoconocimiento y fortalecer tu capacidad de resiliencia.
+                </p>
+                <p style="font-size: 1.05rem;">
+                    Mantengo una permanente actualización científica, participando activamente de espacios de referencia académica como el <strong>Congreso Internacional de la Asociación Argentina de Psiquiatría y Salud Mental (AAP)</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENFOQUE TERAPÉUTICO Y TEORÍAS -->
+    <section id="enfoque" class="section" style="background-color: var(--arena-playa); border-radius: 20px;">
+        <div class="section-header">
+            <h2>Comprensión del Marco Terapéutico</h2>
+            <p>Bases científicas y filosóficas aplicadas a tu bienestar</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card-custom">
+                <h3>Psicología Clínica</h3>
+                <p>Ciencia que aborda la salud mental, el sufrimiento emocional y los procesos del desarrollo humano. Se orienta a comprender y aliviar el malestar, facilitando que la persona despliegue sus recursos personales.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Teoría Cognitivo Conductual & ACT</h3>
+                <p>La TCC analiza la relación entre pensamientos, emociones y conductas. Se complementa con ACT (Aceptación y Compromiso), enseñando a aceptar las vivencias internas sin juicio y orientando las acciones hacia lo que aporta valor real a tu vida.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Psicología Positiva (Víktor Frankl)</h3>
+                <p>Fundada en el sentido de vida y la resiliencia humana. Propone que aun frente a la adversidad, las personas poseen la libertad interior para resignificar el dolor, crecer, madurar y sobreponerse con propósito.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORIAS DE VIDA Y RESILIENCIA -->
+    <section id="historias" class="section">
+
+    </section>
+
+    <!-- SERVICIOS PROFESIONALES -->
+    <section id="servicios" class="section" style="background-color: var(--arena-playa); border-radius: 20px;">
+        <div class="section-header">
+            <h2>Servicios y Especialidades</h2>
+            <p>Propuestas terapéuticas diseñadas a la medida de cada necesidad</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card-custom">
+                <h3>Terapia Individual</h3>
+                <p>Atención a adultos. Espacio de contención para ansiedad, estados de ánimo, duelos y autoconocimiento.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Terapia de Pareja</h3>
+                <p>Acompañamiento para destrabar conflictos vinculares, mejorar la comunicación y redefinir proyectos de vida juntos.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Talleres Grupales</h3>
+                <p>Talleres para adolescentes y adultos con enfoque especial en mujeres: empoderamiento, autoconocimiento y desbloqueo emocional.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Orientación Vocacional</h3>
+                <p>Procesos reflexivos y psicométricos para orientar decisiones educativas, laborales y giros profesionales.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Evaluaciones & Test</h3>
+                <p>Evaluaciones psicotécnicas laborales, test de personalidad y evaluaciones de funciones cognitivas.</p>
+            </div>
+            <div class="card-custom">
+                <h3>Certificado de Viaje con Mascotas</h3>
+                <p>Emisión de certificados profesionales de soporte emocional para viajes con mascotas según normativa vigente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TALLERES Y CONGRESOS -->
+    <section id="talleres" class="section">
+        <div class="section-header">
+            <h2>Taller "Volver a Mí"</h2>
+            <p>Realizado el 28 de Septiembre de 2026 en El Tanque Cultural de Mataderos, CABA</p>
+        </div>
+        <div class="carousel-wrapper" id="carousel-taller">
+            <button class="carousel-control prev" onclick="moverCarrusel('carousel-taller', -1)">&#10094;</button>
+            <div class="carousel-slides">
+                <img src="Taller 1.jpeg" alt="Taller Volver a Mi - Imagen 1">
+                <img src="Taller 2.jpeg" alt="Taller Volver a Mi - Imagen 2">
+                <img src="Taller 3.jpeg" alt="Taller Volver a Mi - Imagen 3">
+            </div>
+            <button class="carousel-control next" onclick="moverCarrusel('carousel-taller', 1)">&#10095;</button>
+        </div>
+
+        <div class="section-header" style="margin-top: 70px;">
+            <h2>Congreso Internacional AAP</h2>
+            <p>Participación de la Lic. Silvina Chimento en la Asociación Argentina de Psiquiatría y Salud Mental</p>
+        </div>
+        <div class="carousel-wrapper" id="carousel-congreso">
+            <button class="carousel-control prev" onclick="moverCarrusel('carousel-congreso', -1)">&#10094;</button>
+            <div class="carousel-slides">
+                <img src="Congreso 1.jpeg" alt="Congreso AAP - Imagen 1">
+                <img src="Congreso 2.jpeg" alt="Congreso AAP - Imagen 2">
+                <img src="Congreso 3.jpeg" alt="Congreso AAP - Imagen 3">
+            </div>
+            <button class="carousel-control next" onclick="moverCarrusel('carousel-congreso', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- CONTACTO DIRECTO POR WHATSAPP -->
+    <section id="contacto" class="section">
+        <div class="section-header">
+            <h2>Solicitud de Consulta vía WhatsApp</h2>
+            <p>Coordinación directa de turnos y consultas presenciales o virtuales</p>
+        </div>
+
+        <div class="whatsapp-form-container">
+            <form onsubmit="enviarWhatsApp(event)">
+                <div class="form-group">
+                    <label>Nombre y Apellido:</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de Consulta:</label>
+                    <select id="tipo_consulta" required>
+                        <option value="Primera Entrevista / Primera vez">Primera Entrevista / Primera vez</option>
+                        <option value="Paciente Recurrente">Paciente Recurrente</option>
+                        <option value="Consulta por Talleres / Evaluaciones">Consulta por Talleres / Evaluaciones</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Frecuencia Deseada:</label>
+                    <select id="frecuencia" required>
+                        <option value="Semanal (1 vez por semana)">Semanal (1 vez por semana)</option>
+                        <option value="Semanal (2 veces por semana)">Semanal (2 veces por semana)</option>
+                        <option value="Quincenal (Cada 15 días)">Quincenal (Cada 15 días)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Modalidad de Atención:</label>
+                    <select id="modalidad" required>
+                        <option value="Presencial (Consultorio Mataderos, CABA)">Presencial (Consultorio Mataderos, CABA)</option>
+                        <option value="Virtual (Google Meet / Zoom / WhatsApp Video)">Virtual (Google Meet / Zoom / WhatsApp Video)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje adicional o duda:</label>
+                    <textarea id="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+                <button type="submit" class="btn-whatsapp-send">
+                    <img src="whatsap icono.png" alt="WhatsApp" style="width: 24px; height: 24px;">
+                    Enviar Solicitud a WhatsApp Directo
+                </button>
+            </form>
+        </div>
+
+        <!-- Carrusel de Consultorio y Fotos Profesionales -->
+        <div class="section-header" style="margin-top: 60px;">
+            <h2>Consultorio & Espacio Terapéutico</h2>
+            <p>Ubicado en Mataderos, Ciudad Autónoma de Buenos Aires</p>
+        </div>
+        <div class="carousel-wrapper" id="carousel-consultorio">
+            <button class="carousel-control prev" onclick="moverCarrusel('carousel-consultorio', -1)">&#10094;</button>
+            <div class="carousel-slides">
+                <img src="consultorio.jpeg" alt="Consultorio Mataderos">
+                
+                <img src="Foto profesional 2.jpeg" alt="Lic. Silvina Chimento 2">
+                <img src="Foto profesional 3.jpeg" alt="Lic. Silvina Chimento 3">
+            </div>
+            <button class="carousel-control next" onclick="moverCarrusel('carousel-consultorio', 1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- BANNER INFERIOR Y FOOTER ESTRUCTURADO -->
+    <footer class="footer-banner">
+        <div class="footer-content">
+            <div class="footer-logo-box">
+                <img src="Logo.png" alt="Lic. Silvina Chimento Logo Footer">
+                <h3 style="font-size: 1.25rem;">Lic. Silvina Chimento</h3>
+                <p style="font-size: 0.88rem; color: #555;">Matrícula Nacional: 81441<br>Matrícula Provincial: 086959</p>
+            </div>
+            <div class="footer-info-block">
+                <h4>Modalidades & Cobertura</h4>
+                <p>📍 <strong>Presencial:</strong> Consultorio en Mataderos, CABA, Argentina.</p>
+                <p>💻 <strong>Virtual:</strong> Google Meet, Zoom y WhatsApp para Argentina, España, Chile, Uruguay y Latinoamérica.</p>
+            </div>
+            <div class="footer-info-block">
+                <h4>Contacto Directo</h4>
+                <p>📱 <strong>Teléfono / WhatsApp:</strong> 1165075949</p>
+                <p>📷 <strong>Instagram:</strong> <a href="https://instagram.com/psico.lic.silvina" target="_blank" style="color: var(--lila-oscuro); text-decoration: none; font-weight: 600;">@psico.lic.silvina</a></p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 45px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06); font-size: 0.85rem; color: #666;">
+            &copy; 2026 Lic. Silvina Chimento - Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- ÍCONO FLOTANTE DE WHATSAPP (`whatsap icono.png`) -->
+    <a href="https://wa.me/5491165075949" target="_blank" class="whatsapp-float-btn" title="Contactar por WhatsApp">
+        <img src="whatsap icono.png" alt="Icono WhatsApp Flotante">
+    </a>
+
+    <!-- LÓGICA JAVASCRIPT -->
+    <script>
+        // Lógica de Despliegue de Menú Celular (Sandwich)
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (window.innerWidth <= 768) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        // Lógica de Carruseles
+        const estadoCarruseles = {};
+
+        function moverCarrusel(idCarrusel, direccion) {
+            const wrapper = document.getElementById(idCarrusel);
+            const slides = wrapper.querySelector('.carousel-slides');
+            const imagenes = slides.querySelectorAll('img');
+            const total = imagenes.length;
+
+            if (!(idCarrusel in estadoCarruseles)) {
+                estadoCarruseles[idCarrusel] = 0;
+            }
+
+            estadoCarruseles[idCarrusel] = (estadoCarruseles[idCarrusel] + direccion + total) % total;
+            slides.style.transform = `translateX(-${estadoCarruseles[idCarrusel] * 100}%)`;
+        }
+
+        // Lógica de Envío Directo a WhatsApp
+        function enviarWhatsApp(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const tipo = document.getElementById('tipo_consulta').value;
+            const frecuencia = document.getElementById('frecuencia').value;
+            const modalidad = document.getElementById('modalidad').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            const textoMensaje = `Hola Lic. Silvina Chimento, mi nombre es ${nombre}. Quisiera realizar una consulta:%0A%0A- *Tipo:* ${tipo}%0A- *Frecuencia:* ${frecuencia}%0A- *Modalidad:* ${modalidad}%0A- *Mensaje:* ${mensaje}`;
+            
+            window.open(`https://wa.me/5491165075949?text=${textoMensaje}`, '_blank');
+        }
+    </script>
+</body>
+</html>
